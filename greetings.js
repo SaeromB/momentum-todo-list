@@ -3,10 +3,6 @@ const question = document.querySelector('#question');
 const nameInput = document.querySelector('#name-input');
 
 const greetingsContainer = document.querySelector('#greetings-container');
-const greetings = document.querySelector('#greetings');
-const greetingsName = document.querySelector('#greetings-name');
-
-// checkLocalStorage = () => {};
 
 hideIntroductionContainer = () => {
   introductionContainer.style.display = 'none';
@@ -16,9 +12,13 @@ hideIntroductionContainer = () => {
 showGreetingsContainer = () => {
   const userName = getLocalStorage('username');
   const greeting = document.createElement('span');
+  const greetingName = document.createElement('span');
   greeting.classList.add('greeting');
-  greeting.innerText = `Good Night, ${userName}`;
+  greetingName.classList.add('greeting-name');
+  greeting.innerText = `Hello,`;
+  greetingName.innerText = `${userName}.`;
   greetingsContainer.appendChild(greeting);
+  greetingsContainer.appendChild(greetingName);
 };
 
 let getLocalStorage = (key) => {

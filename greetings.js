@@ -8,19 +8,28 @@ const greetingsName = document.querySelector('#greetings-name');
 
 // checkLocalStorage = () => {};
 
-// hideIntroductionContainer = () => {};
+hideIntroductionContainer = () => {
+  introductionContainer.style.display = 'none';
+  showGreetingsContainer();
+};
 
-// showGreetingsContainer = () => {};
+showGreetingsContainer = () => {
+  const userName = getLocalStorage('username');
+  const greeting = document.createElement('span');
+  greeting.classList.add('greeting');
+  greeting.innerText = `Good Night, ${userName}`;
+  greetingsContainer.appendChild(greeting);
+};
 
 let getLocalStorage = (key) => {
   return localStorage.getItem(key);
 };
 
-// setItem의 key와 value를 인자로 받기 -> 나중에 수정하기
+// setItem의 key와 value를 인자로 받고 nameInput addEventListener에 전달하기 -> 나중에 수정하기
 let saveLocalStorage = () => {
   const savedName = nameInput.value;
   localStorage.setItem('username', savedName);
-  console.log(localStorage);
+  // console.log(savedName);
   // hideIntroductionContainer();
 };
 
@@ -29,7 +38,8 @@ let saveLocalStorage = () => {
 
 nameInput.addEventListener('keydown', function (event) {
   if (event.code === 'Enter') {
-    console.log(nameInput.value);
+    // console.log(nameInput.value);
     saveLocalStorage();
+    hideIntroductionContainer();
   }
 });

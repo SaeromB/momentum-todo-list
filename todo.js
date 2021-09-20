@@ -21,7 +21,7 @@ function renderTodo(todo) {
     <label for="${todo.id}" class="tick"></label>
     <span>${todo.text}</span>
     <button class="delete-todo">
-    <span>delete</span>
+    delete
     </button>
   `;
 

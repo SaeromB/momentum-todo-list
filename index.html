@@ -10,9 +10,9 @@
   </head>
 
   <body>
-    <div id="clock"></div>
-    <div id="introduction-container">
-      <span id="question">Hello, what's your name?</span>
+    <div id="clock" class="clock"></div>
+    <div id="introduction-container" class="introduction-container">
+      <span id="question" class="question">Hello, what's your name?</span>
       <input type="text" class="input" id="name-input" />
     </div>
 
@@ -24,22 +24,34 @@
       Good Evening
       5:00 PM — 4:59 AM   
       -->
-    <div id="greetings-container"></div>
+    <div id="greetings-container" class="greetings-container"></div>
 
-    <div id="focus-container">
-      <h3 id="focus-question">What is your main focus for today?</h3>
+    <!-- <div id="focus-container" class="focus-container">
+      <h3 id="focus-question" class="focus-question">
+        What is your main focus for today?
+      </h3>
       <input type="text" class="input" id="focus-input" />
-    </div>
+    </div> -->
 
     <div id="focus-content">
       <!-- <input type="checkbox" id="focus-checkbox" /> -->
       <!-- svg로 변경하기 -->
       <!-- <div id="delete-focus-list">delete</div> -->
     </div>
+
+    <div id="todo-container" class="todo-container">
+      <h3 id="todo-title" class="todo-title">Today</h3>
+      <ul id="todo-list" class="todo-list"></ul>
+      <form id="todo-form" class="todo-form">
+        <input type="text" id="todo-input" class="todo-input" />
+      </form>
+    </div>
+
     <script src="clock.js"></script>
     <script src="introduction.js"></script>
     <script src="hide-container.js"></script>
     <script src="greetings.js"></script>
     <script src="focus.js"></script>
+    <script src="todo.js"></script>
   </body>
 </html>
